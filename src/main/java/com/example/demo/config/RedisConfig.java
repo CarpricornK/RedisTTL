@@ -36,7 +36,7 @@ public class RedisConfig {
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())) // Value Serializer 변경
                 .prefixKeysWith("") // Key Prefix로 "Test:"를 앞에 붙여 저장
-                .entryTtl(Duration.ofMinutes(6)); // 캐시 수명 5분 으로 설정
+                .entryTtl(Duration.ofMinutes(8)); // 캐시 수명 5분 으로 설정
         builder.cacheDefaults(configuration);
         return builder.build();
     }
